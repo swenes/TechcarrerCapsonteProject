@@ -11,10 +11,11 @@ import org.testng.annotations.BeforeMethod;
 import java.time.Duration;
 
 public class BaseTest extends BaseLibrary {
+
     public static WebDriver driver;
 
     @BeforeMethod
-    public void OpenBrowser(){
+    public void openBrowser(){
         driver = new ChromeDriver();
         driver.get(URL);
         driver.manage().window().maximize();

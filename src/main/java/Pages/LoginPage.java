@@ -23,6 +23,7 @@ public class LoginPage extends BaseTest {
         loginButton.submit();
     }
 
+    @Step("Login sayfasına gidilir.")
     public void goToLoginPage() {
         driver.get("https://www.beymen.com/tr/customer/login?returnUrl=/tr/customer");
     }

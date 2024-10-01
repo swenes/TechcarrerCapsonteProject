@@ -15,10 +15,12 @@ public class BaseLibrary extends TestData{
     public void sleep(int millis) throws InterruptedException {
         Thread.sleep(millis);
     }
+
     @Step("Karşılaştırma işlemi sağlanır")
     public void assertEquals(String actual, String expected){
         Assert.assertEquals(actual, expected);
     }
+
     @Attachment(value = "Screenshot", type = "image/png")
     public byte[] screenshot() {
         return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
