@@ -3,6 +3,7 @@ package Pages;
 import Base.BaseTest;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
@@ -54,12 +55,12 @@ public class RegisterPage extends BaseTest {
         // Ay seçimi
         WebElement monthDropdown = driver.findElement(By.id("month"));
         Select selectMonth = new Select(monthDropdown);
-        selectMonth.selectByVisibleText(month);  // Örneğin "January" olarak girilebilir
+        selectMonth.selectByVisibleText(month);  // Örneğin "Ocak" olarak girilebilir
 
         // Yıl seçimi
         WebElement yearDropdown = driver.findElement(By.id("year"));
         Select selectYear = new Select(yearDropdown);
-        selectYear.selectByVisibleText(year);  // Örneğin "1992" olarak girilebilir
+        selectYear.selectByVisibleText(year);  // Örneğin "2000" olarak girilebilir
         return this;
     }
 
@@ -82,18 +83,19 @@ public class RegisterPage extends BaseTest {
 
     @Step("Sözleşme kabul edilir")
     public RegisterPage acceptAgreement() {
-        WebElement agreementCheckbox = driver.findElement(By.xpath("//*[@id=\"MembershipAgreement\"]"));
-        // Eğer checkbox işaretlenmemişse, onu işaretle
-        if (!agreementCheckbox.isSelected()) {
-            agreementCheckbox.submit();
-        }
+        // Checkbox'ı bul
+        WebElement termsCheckbox = driver.findElement(By.id("MembershipAgreement"));
+
+        // JavaScriptExecutor ile checkbox'ı işaretle
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click();", termsCheckbox);
 
         return this;
     }
 
     @Step("Ticari elektronik izin verme butonuna tıklanır.")
     public RegisterPage withoutPermission(){
-        WebElement withoutPermissionButton = driver.findElement(By.xpath("//*[@id=\"registerForm\"]/div[3]/div/label"));
+        WebElement withoutPermissionButton = driver.findElement(By.xpath("//*[@id=\"noAllowBtn\"]"));
         withoutPermissionButton.click();
         return this;
     }
