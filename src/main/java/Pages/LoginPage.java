@@ -23,5 +23,9 @@ public class LoginPage extends BaseTest {
         loginButton.submit();
     }
 
+    public void goToLoginPage() {
+        driver.get("https://www.beymen.com/tr/customer/login?returnUrl=/tr/customer");
+    }
+
 
 }

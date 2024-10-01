@@ -12,9 +12,10 @@ public class LoginTest extends BaseTest {
 
     @Test(description = "Başarılı Kullanıcı Girişi")
     public void loginSuccessful() throws InterruptedException {
-       loginPage.fillMailAndPassword(mail,password)
-               .clickLoginButton();
-       sleep(5000);
+        loginPage.goToLoginPage();
+        sleep(5000);
+        loginPage.fillMailAndPassword(mail, password)
+                .clickLoginButton();
     }
 
 }
