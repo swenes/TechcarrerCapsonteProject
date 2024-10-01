@@ -27,6 +27,19 @@ public class LoginPage extends BaseTest {
     public void goToLoginPage() {
         driver.get("https://www.beymen.com/tr/customer/login?returnUrl=/tr/customer");
     }
+    @Step("'En az 6 karakter olmalı.' mesajı alınır.")
+    public String getInvalidPasswordErrorMessage(){
+        return driver.findElement(By.xpath("//*[@id=\"loginForm\"]/div[2]/div/span")).getText();
+    }
+    @Step("'Lütfen bilgilerinizi kontrol edip yeniden deneyiniz.' mesajı alınır.")
+    public String getWrongMailErrorMessage(){
+        return driver.findElement(By.xpath("//*[@id=\"notifyMessage\"]")).getText();
+    }
+
+    @Step("'Lütfen geçerli bir eposta adresi giriniz' mesajı alınır.")
+    public String getInvalidMailErrorMessage(){
+        return driver.findElement(By.xpath("//*[@id=\"loginForm\"]/div[1]/div/span[2]")).getText();
+    }
 
 
 }

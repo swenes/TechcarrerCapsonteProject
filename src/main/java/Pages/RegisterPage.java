@@ -37,12 +37,7 @@ public class RegisterPage extends BaseTest {
         return this;
     }
 
-    @Step("Çerezler kabul edilir")
-    public RegisterPage acceptCookies() {
-        WebElement acceptCookiesButton = driver.findElement(By.xpath("//*[@id=\"onetrust-accept-btn-handler\"]"));
-        acceptCookiesButton.click();
-        return this;
-    }
+
 
 
     @Step("Doğum tarihi seçilir.")
@@ -74,10 +69,8 @@ public class RegisterPage extends BaseTest {
             WebElement femaleRadioButton = driver.findElement(By.xpath("//*[@id=\"registerForm\"]/div[1]/div[6]/div[1]/div/label"));
             femaleRadioButton.click();
             return this;
-
         } else {
             throw new IllegalArgumentException("Invalid gender option: " + gender);
-
         }
     }
 
@@ -89,7 +82,6 @@ public class RegisterPage extends BaseTest {
         // JavaScriptExecutor ile checkbox'ı işaretle
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", termsCheckbox);
-
         return this;
     }
 
