@@ -15,7 +15,8 @@ public class TestData {
     public String invalidFormatPassword = "123";
     public String invalidPhoneNumber = "12345678910";
     public String empty = "";
-
+    public String invalidSearchText = "abcdefghijklmnopqrst";
+    public String searchText = "Gömlek";
     //expected error messages
     public String emptyErrorMessage = "Bu alan boş bırakılamaz";
     public String invalidMailFormatMessage = "Lütfen geçerli bir eposta adresi giriniz";
@@ -23,6 +24,8 @@ public class TestData {
     public String wrongPasswordMessage = "Lütfen bilgilerinizi kontrol edip yeniden deneyiniz.";
     public String invalidPhoneMessage = "Lütfen cep telefonu numaranızı kontrol ediniz. 10 haneli numaranızı, başında 0 olmadan ve 5 ile başlayacak şekilde giriniz.";
     public String wrongMailMessage = "Lütfen bilgilerinizi kontrol edip yeniden deneyiniz.";
+    public String productNotFoundMessage = "\"" + invalidSearchText + "\" için bir sonuç bulunamadı.";
+    public String productFoundMessage = "\"" + searchText + "\" için en uygun sonuçlar";
 
 
 }
