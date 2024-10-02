@@ -6,7 +6,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 
-@Feature("Login Test Senaryoları")
+@Feature("Login Page Test Senaryoları")
 
 public class LoginTest extends BaseTest {
 
@@ -14,9 +14,9 @@ public class LoginTest extends BaseTest {
     BasePage basePage = new BasePage();
 
     @BeforeMethod
-    public void beforeRunTests() throws InterruptedException {
+    public void setUp() throws InterruptedException {
         loginPage.goToLoginPage();
-        sleep(3000);
+        sleep(1000);
         basePage.acceptCookies();
     }
 

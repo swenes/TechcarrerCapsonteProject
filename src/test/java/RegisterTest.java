@@ -1,8 +1,12 @@
 import Base.BaseTest;
 import Pages.BasePage;
 import Pages.RegisterPage;
+import io.qameta.allure.Feature;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+
+@Feature("Register Page Test Senaryoları")
 
 public class RegisterTest extends BaseTest {
 
@@ -10,9 +14,9 @@ public class RegisterTest extends BaseTest {
     BasePage basePage = new BasePage();
 
     @BeforeMethod
-    public void beforeRunTest() throws InterruptedException {
+    public void setUp() throws InterruptedException {
         registerPage.goToRegisterPage();
-        sleep(3000);
+        sleep(1000);
         basePage.acceptCookies();
     }
 
