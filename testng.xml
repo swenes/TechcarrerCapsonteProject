@@ -6,6 +6,9 @@
             <class name="LoginTest"/>
             <class name="RegisterTest"/>
             <class name="BasePageTest"/>
+            <class name="MyCartTest"/>
+            <class name="ProfilePageTest"/>
+
         </classes>
     </test>
 </suite>

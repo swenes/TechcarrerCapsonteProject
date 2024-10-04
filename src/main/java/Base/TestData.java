@@ -30,6 +30,6 @@ public class TestData {
             "Ürün sepetinize eklenmiştir.";
     public String deletedFromCartMessage = "Ürün Silindi\n" +
             "Sepetinizden ürün başarılı bir şekilde silinmiştir.";
-
+    public String loginText = "GİRİŞ YAP";
 
 }
