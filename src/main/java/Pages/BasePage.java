@@ -49,4 +49,18 @@ public class BasePage extends BaseTest {
     public String getProductFoundErrorMessage() {
         return driver.findElement(By.xpath("/html/body/header/div[2]/div[2]/div[2]/div/div[1]/div/span")).getText();
     }
+    @Step("Cinsiyet seçimi yapılır.")
+    public BasePage selectGender(String gender) {
+        if (gender.equalsIgnoreCase("male")) {
+            WebElement maleRadioButton = driver.findElement(By.xpath("//*[@id=\"genderManButton\"]"));
+            maleRadioButton.click();
+            return this;
+        } else if (gender.equalsIgnoreCase("female")) {
+            WebElement femaleRadioButton = driver.findElement(By.xpath("//*[@id=\"genderWomanButton\"]"));
+            femaleRadioButton.click();
+            return this;
+        } else {
+            throw new IllegalArgumentException("Invalid gender option: " + gender);
+        }
+    }
 }

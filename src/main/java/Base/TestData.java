@@ -26,6 +26,10 @@ public class TestData {
     public String wrongMailMessage = "Lütfen bilgilerinizi kontrol edip yeniden deneyiniz.";
     public String productNotFoundMessage = "\"" + invalidSearchText + "\" için bir sonuç bulunamadı.";
     public String productFoundMessage = "\"" + searchText + "\" için en uygun sonuçlar";
+    public String addedToCardMessage = "Sepete Eklendi\n" +
+            "Ürün sepetinize eklenmiştir.";
+    public String deletedFromCartMessage = "Ürün Silindi\n" +
+            "Sepetinizden ürün başarılı bir şekilde silinmiştir.";
 
 
 }

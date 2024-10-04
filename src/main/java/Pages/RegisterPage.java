@@ -36,10 +36,6 @@ public class RegisterPage extends BaseTest {
         registerButton.submit();
         return this;
     }
-
-
-
-
     @Step("Doğum tarihi seçilir.")
     public RegisterPage selectDateOfBirth(String day, String month, String year) {
         // Gün seçimi
