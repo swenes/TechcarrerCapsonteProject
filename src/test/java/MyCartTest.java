@@ -24,9 +24,9 @@ public class MyCartTest extends BaseTest {
         loginPage.goToLoginPage();
         loginPage.fillMailAndPassword(mail,password)
                 .clickLoginButton();
-        sleep(3000);
+        sleep(2000);
         myCartPage.goToProductPage();
-        sleep(3000);
+        sleep(2000);
         WebElement selectSize = driver.findElement(By.cssSelector("[class='m-variation__item']")); // ürün tükendiğinde(s-m-l-xl seçimi yapılamadığında) patlıyor buraya update gerekecek.
         selectSize.click();
         WebElement addToCartButton = driver.findElement(By.xpath("//*[@id=\"addBasket\"]"));
@@ -40,6 +40,7 @@ public class MyCartTest extends BaseTest {
     public void addToMyCartWithoutLogin() throws InterruptedException {
         basePage.acceptCookies();
         myCartPage.goToProductPage();
+        sleep(2000);
         WebElement selectSize = driver.findElement(By.cssSelector("[class='m-variation__item']']"));
         selectSize.click();
         WebElement addToCartButton = driver.findElement(By.xpath("//*[@id=\"addBasket\"]"));
