@@ -1,6 +1,8 @@
 # Techcarrer QA Bootcamp Bitirme Projesi
 
-Bu projede, **Beymen.com.tr** platformunda kullanıcıların gerçekleştirdiği temel işlemleri otomatikleştirmeyi hedefledim. Kayıt olma, kullanıcı girişi, ürün arama, sepete ekleme ve çıkış yapma gibi kritik kullanıcı senaryolarını kapsamlı bir şekilde test etmek için otomasyon süreçleri geliştirdim. 
+Bu projede, **Beymen.com.tr** platformunda kullanıcıların gerçekleştirdiği temel işlemleri otomatikleştirmeyi hedefledim. 
+
+Kayıt olma, kullanıcı girişi, ürün arama, sepete ekleme ve çıkış yapma gibi kritik kullanıcı senaryolarını kapsamlı bir şekilde test etmek için otomasyon süreçleri geliştirdim. 
 
 Projemi, **Page Object Model (POM) Design Pattern** kullanılarak yapılandırdım. Bu sayede kodun modülerliğini ve okunabilirliğini artırarak, daha kolay yönetilebilir ve sürdürülebilir bir test altyapısı oluşturmayı başardım.
 
@@ -101,5 +103,6 @@ Proje, Jenkins ile sürekli entegrasyon ve sürekli dağıtım (CI/CD) süreçle
 
 ![jenkins](https://github.com/user-attachments/assets/29b4b479-f122-4406-9f5f-c917f6033031)
 
+![jenkins2](https://github.com/user-attachments/assets/a4a51902-665a-4bfc-9f87-9ee1f6b56fac)
 
 
