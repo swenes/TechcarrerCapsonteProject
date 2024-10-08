@@ -6,13 +6,14 @@ Projemi, **Page Object Model (POM) Design Pattern** kullanılarak yapılandırd�
 
 Bu yapıyla birlikte, testlerin bakımını çok daha pratik hale getirip, farklı senaryoların eklenmesini de kolaylaştırmayı planladım.
 
+Ayrıca projede **Jenkins** entegrasyonu da gerçekleştirdim. Böylece süreci daha kolay ve pratik yönetebileceğiz.
 
-## Projede Kullanılan Teknolojiler
 
 - **Java**
 - **Selenium**
 - **TestNG**
 - **Allure Report** (Test sonuçlarını raporlamak için)
+- **Jenkins** (CI/CD Süreçleri için)
 
 
 # Test Senaryoları
@@ -62,12 +63,43 @@ Bir login testinin fail olma durumu ise, Beymen web sitesinin rastgele olarak ik
  • "Girdiğiniz karakterler hatalı. Lütfen tekrar yazınız."
 
  
-Bu yüzden test, %50 olasılık ile fail vermektedir.  
+Bu yüzden test, %50 olasılık ile fail olmaktadır.  
 
 
 ![allure_results](https://github.com/user-attachments/assets/058c0b3e-e046-4d44-abcc-976d9ee7e210)
 
 
+
+
+<p align="center">
+Hataya ilişkin hazırlanmış bug raporu aşağıda yer almaktadır
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/58ad50cc-01eb-4eb2-8f94-c9df40e62151" alt="" />
+</p>
+
+
+# Jenkins Entegrasyonu (For CI/CD)
+
+Proje, Jenkins ile sürekli entegrasyon ve sürekli dağıtım (CI/CD) süreçlerini destekleyecek şekilde yapılandırılmıştır. Jenkins, otomatik test süreçlerini yönetmek ve sürüm kontrol sistemindeki değişikliklere yanıt olarak testlerinizi çalıştırmak için kullanılır.
+
+1. **Jenkins'i Kurun**: [Jenkins'in resmi web sitesinden](https://www.jenkins.io/download/) uygun versiyonu indirip kurun.
+2. **Jenkins'i Başlatın**: Kurulumdan sonra Jenkins'i başlatın ve web arayüzüne erişmek için tarayıcınızı açın.
+3. **Yeni Bir Proje Oluşturun**:
+   - Jenkins ana sayfasında "Yeni Öğe" seçeneğine tıklayın.
+   - Projenize bir isim verin ve "Serbest Stil Proje" seçeneğini seçin.
+4. **Kaynak Kod Yönetimi**: 
+   - "Kaynak Kod Yönetimi" sekmesine gidin ve Git deposunun URL'sini ekleyin.
+5. **Yapılandırma**:
+   - "Yapı" sekmesine gidin ve otomatik testlerinizi çalıştırmak için gerekli komutları ekleyin.
+   - Maven için "goals" kısmına: `clean test` komutunu girin.
+   - Allure Reports için: allure-results path'ini belirleyin.
+   
+6. **Sonuçları İzleyin**:
+   - Testler çalıştıktan sonra sonuçları Jenkins üzerinden izleyebilirsiniz. Hatalar ve raporlar, Jenkins arayüzünde görüntülenecektir.
+
+![jenkins](https://github.com/user-attachments/assets/29b4b479-f122-4406-9f5f-c917f6033031)
 
 
 
