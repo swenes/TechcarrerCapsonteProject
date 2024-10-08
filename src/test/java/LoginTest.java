@@ -16,7 +16,7 @@ public class LoginTest extends BaseTest {
     @BeforeMethod
     public void setUp() throws InterruptedException {
         loginPage.goToLoginPage();
-        sleep(1000);
+        sleep(2500);
         basePage.acceptCookies();
     }
 
@@ -38,7 +38,7 @@ public class LoginTest extends BaseTest {
     public void loginFailCase2() throws InterruptedException {
         loginPage.fillMailAndPassword(mail, invalidPassword)
                 .clickLoginButton();
-        sleep(1000);
+        sleep(1500);
         String actualValue = basePage.getWrongPaswordErrorMessage();
         assertEquals(actualValue, wrongPasswordMessage);
     }
@@ -47,7 +47,7 @@ public class LoginTest extends BaseTest {
     public void loginFailCase3() throws InterruptedException {
         loginPage.fillMailAndPassword(wrongMail, password)
                 .clickLoginButton();
-        sleep(1000);
+        sleep(1500);
         String actualValue = loginPage.getWrongMailErrorMessage();
         assertEquals(actualValue, wrongMailMessage);
     }
@@ -56,7 +56,7 @@ public class LoginTest extends BaseTest {
     public void loginFailCase4() throws InterruptedException {
         loginPage.fillMailAndPassword(invalidFormatMail, password)
                 .clickLoginButton();
-        sleep(1000);
+        sleep(1500);
         String actualValue = loginPage.getInvalidMailErrorMessage();
         assertEquals(actualValue, invalidMailFormatMessage);
     }
@@ -65,7 +65,7 @@ public class LoginTest extends BaseTest {
     public void loginFailCase5() throws InterruptedException {
         loginPage.fillMailAndPassword(empty, password)
                 .clickLoginButton();
-        sleep(1000);
+        sleep(1500);
         String actualValue = basePage.getEmptyErrorMessage();
         assertEquals(actualValue, emptyErrorMessage);
     }
@@ -73,7 +73,7 @@ public class LoginTest extends BaseTest {
     public void loginFailCase6() throws InterruptedException {
         loginPage.fillMailAndPassword(mail,empty)
                 .clickLoginButton();
-        sleep(1000);
+        sleep(1500);
         String actualValue = basePage.getEmptyErrorMessage();
         assertEquals(actualValue, emptyErrorMessage);
     }

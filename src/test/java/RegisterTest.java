@@ -16,7 +16,7 @@ public class RegisterTest extends BaseTest {
     @BeforeMethod
     public void setUp() throws InterruptedException {
         registerPage.goToRegisterPage();
-        sleep(1000);
+        sleep(2000);
         basePage.acceptCookies();
     }
 

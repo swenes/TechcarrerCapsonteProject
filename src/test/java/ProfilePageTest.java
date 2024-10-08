@@ -2,6 +2,7 @@ import Base.BaseTest;
 import Pages.BasePage;
 import Pages.LoginPage;
 import Pages.ProfilePage;
+import io.qameta.allure.Feature;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.devtools.v85.profiler.model.Profile;
@@ -9,6 +10,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+@Feature("Profile Page Test Senaryoları")
 
 public class ProfilePageTest extends BaseTest {
     private static final Logger log = LoggerFactory.getLogger(ProfilePage.class);
@@ -30,6 +33,7 @@ public class ProfilePageTest extends BaseTest {
         basePage.acceptCookies();
         sleep(3000);
         WebElement myProfileButton = driver.findElement(By.xpath("//*[@id=\"headerJs\"]/header/div/div/div[3]/div/a[1]"));
+        sleep(1000);
         myProfileButton.click();
         sleep(3000);
         WebElement logoutButton = driver.findElement(By.xpath("//*[@id=\"exitBtnTop\"]"));

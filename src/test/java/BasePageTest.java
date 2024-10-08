@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import static Base.BaseTest.driver;
 
-@Feature("BasePage Test Senaryoları")
+@Feature("Base Page Test Senaryoları")
 public class BasePageTest extends BaseTest {
 
     BasePage basePage = new BasePage();

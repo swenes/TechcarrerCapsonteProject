@@ -3,6 +3,7 @@ package Base;
 public class TestData {
 
 
+    //final
     public String URL = "https://www.beymen.com/tr";
     public String name = "Enes";
     public String surname = "Aydogdu";
@@ -17,7 +18,9 @@ public class TestData {
     public String empty = "";
     public String invalidSearchText = "abcdefghijklmnopqrst";
     public String searchText = "Gömlek";
-    //expected error messages
+
+
+    //expected message texts
     public String emptyErrorMessage = "Bu alan boş bırakılamaz";
     public String invalidMailFormatMessage = "Lütfen geçerli bir eposta adresi giriniz";
     public String invalidPasswordMessage = "En az 6 karakter olmalı.";
