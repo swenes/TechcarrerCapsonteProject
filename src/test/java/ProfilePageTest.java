@@ -21,23 +21,25 @@ public class ProfilePageTest extends BaseTest {
         sleep(3000);
     }
 
-    @Test
+    @Test(description = "Hesaba giriş yapılır ve ardından başarıyla çıkış yapılır")
     public void logout() throws InterruptedException {
         loginPage.goToLoginPage();
-        sleep(1000);
+        sleep(2000);
         loginPage.fillMailAndPassword(mail,password)
                 .clickLoginButton();
         basePage.acceptCookies();
+        sleep(3000);
         WebElement myProfileButton = driver.findElement(By.xpath("//*[@id=\"headerJs\"]/header/div/div/div[3]/div/a[1]"));
         myProfileButton.click();
-        sleep(1000);
+        sleep(3000);
         WebElement logoutButton = driver.findElement(By.xpath("//*[@id=\"exitBtnTop\"]"));
         logoutButton.click();
         WebElement areYouSureButton = driver.findElement(By.xpath("//*[@id=\"sendBtn\"]"));
         areYouSureButton.click();
-        sleep(1000);
+        sleep(3000);
         WebElement myProfileButton2 = driver.findElement(By.xpath("/html/body/header/div/div/div[3]/div/a[1]"));
         myProfileButton2.click();
+        sleep(3000);
         String actualValue = profilePage.getLoginText();
         assertEquals(actualValue,loginText);
     }

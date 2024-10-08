@@ -40,8 +40,9 @@ public class MyCartTest extends BaseTest {
     public void addToMyCartWithoutLogin() throws InterruptedException {
         basePage.acceptCookies();
         myCartPage.goToProductPage();
-        sleep(2000);
-        WebElement selectSize = driver.findElement(By.cssSelector("[class='m-variation__item']']"));
+        sleep(3000);
+        WebElement selectSize = driver.findElement(By.cssSelector("[class='m-variation__item']"));
+        sleep(1000);
         selectSize.click();
         WebElement addToCartButton = driver.findElement(By.xpath("//*[@id=\"addBasket\"]"));
         addToCartButton.click();
@@ -50,21 +51,22 @@ public class MyCartTest extends BaseTest {
         assertEquals(actualValue,addedToCardMessage);
     }
 
-    @Test
+    @Test(description = "Hesaba giriş yapılır, sepetime gidilir ve sepetteki ürün silinir.")
     public void deleteFromMyCart() throws InterruptedException {
         loginPage.goToLoginPage();
-        sleep(2000);
+        sleep(3000);
         loginPage.fillMailAndPassword(mail,password)
                 .clickLoginButton();
         sleep(2000);
         basePage.acceptCookies();
+        sleep(2000);
         WebElement myCartButton = driver.findElement(By.xpath("//*[@id=\"headerJs\"]/header/div/div/div[3]/div/a[3]"));
-        sleep(1000);
+        sleep(2000);
         myCartButton.click();
-        sleep(1000);
+        sleep(2000);
         WebElement deleteProductButton = driver.findElement(By.xpath("//*[@id=\"removeCartItemBtn0-key-0\"]"));
         deleteProductButton.click();
-        sleep(1000);
+        sleep(2000);
         String actualValue =myCartPage.getDeletedToCartMessage();
         assertEquals(actualValue,deletedFromCartMessage);
     }
