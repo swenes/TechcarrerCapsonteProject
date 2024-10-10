@@ -81,6 +81,10 @@ Hataya ilişkin hazırlanmış bug raporu aşağıda yer almaktadır
   <img src="https://github.com/user-attachments/assets/58ad50cc-01eb-4eb2-8f94-c9df40e62151" alt="" />
 </p>
 
+<p align="center">
+Bug Report
+</p>
+
 
 # Jenkins Entegrasyonu (For CI/CD)
 
